@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* COMMON */
+.text-white{
+    color: #fff !important; /*Thuộc tính dùng chung cho các chữ có màu trắng và có sự ưu tiên nhất cách dùng để tên class này vào class của thẻ muốn dùng*/
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+/* row & columm layout là 1 kỹ thuật nâng cao dùng css chung cho các layout có dạng tương tự */
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+/*tạo một element giả thay vì tạo div clear để giải quyết lỗi thẻ cha k ôm được thẻ con*/
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col{
+    /*-8px trái phải là một kỹ thuật trong bootstrap dùng để đẩy hai item 2 bên dính vào mép sau khi padding*/
+    float: left;
+    padding: 0 8px;
+}
+
+.col-half{
+    width: 50%;
+}
+
+.col-third{
+    width: calc(100% / 3);
+}
+
+.col-full{
+    width: 100%;
+}
+
+#main{
+
+}
+
+#header{
+    height: 46px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#nav{
+    display: inline-block;
+}
+
+#nav li{
+    display: inline-block;
+    line-height: 46px;
+    position: relative;
+}
+
+#nav > li > a{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#nav li a{
+    display: block;
+    padding: 0 24px;
+    text-decoration: none;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav .subnav{
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#nav .subnav li{
+    display: block;
+}
+
+#nav .subnav a{
+    color: #000;
+    line-height: 38px;
+    padding: 0 12px;
+}
+
+#header .search-btn{
+    float: right;
+    padding: 0 21px;
+}
+
+#header .search-btn:hover{
+    cursor: pointer;
+    background-color: red;
+}
+
+#header .search-icon{
+    color: #fff;
+    font-size: 20px;
+    line-height: 46px;
+}
+
+#slider{
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('../assets/img/Slider/Slider1.jpg') top center / cover no-repeat;
+}
+
+#slider .text-content{
+    position: absolute;
+    color: #fff;
+    bottom: 48px;
+    width: 100%;
+    text-align: center;
+}
+
+#slider .text-heading{
+    font-size: 24px;
+    font-weight: 500px;
+    margin: 25px 0;
+}
+
+#slider .text-description{
+    font-size: 15px;
+}
+
+
+#content{
+
+}
+
+#footer{
+
+}

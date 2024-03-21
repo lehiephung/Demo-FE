@@ -1,0 +1,415 @@
+/*RESET CSS cơ bản nhất*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+    1. Vị trí
+    2. Kích thước (width, heigth)
+    3. Màu sắc
+    4. Kiểu dáng (Kiểu chữ, hình dạng,...)
+*/
+
+/* COMMON (Dùng chung) */
+.text-white{
+    color: #fff !important; /*Thuộc tính dùng chung cho các chữ có màu trắng và có sự ưu tiên nhất cách dùng để tên class này vào class của thẻ muốn dùng*/
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+/* row & columm layout là 1 kỹ thuật nâng cao dùng css chung cho các layout có dạng tương tự */
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+/*tạo một element giả thay vì tạo div clear để giải quyết lỗi thẻ cha k ôm được thẻ con*/
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col{
+    /*-8px trái phải là một kỹ thuật trong bootstrap dùng để đẩy hai item 2 bên dính vào mép sau khi padding*/
+    float: left;
+    padding: 0 8px;
+}
+
+.col-half{
+    width: 50%;
+}
+
+.col-third{
+    width: calc(100% / 3);
+}
+
+.col-full{
+    width: 100%;
+}
+
+/* MAIN SECTION */
+#main {
+
+}
+
+/* HEADER SECTION */
+#header {
+    overflow: hidden;
+    height: 46px;
+    background-color: #000;
+    /* Làm cho phần header luôn dính trên cùng khi cuộn */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1; /*Thuộc tính chỉ độ sâu nhằm cho header nổi lên so với slider*/
+}
+
+#nav{
+    /* Đặt thuộc tính cho nav k chiếm hết chiều ngang */
+    display: inline-block;
+}
+
+/* Css danh sách trong id nav */
+#nav li{
+    font-size: 15px;
+    display: inline-block;  /* Đưa các thuộc tính trong li lên cùng một hàng */
+    position: relative; /*Thuộc tính để chứa thẻ con là subnav*/
+}
+
+#nav > li > a{
+    /* Tách riêng ra bằng cách lấy con trực tiếp từ dấu ">" để subnav không bị ảnh hưởng màu chữ*/
+    color: #fff;
+    text-transform: uppercase; /*Chuyển thành chữ in hoa*/
+
+}
+
+#nav li a{
+    text-decoration: none;
+    /* Canh giữa bằng thuộc tính line-height */
+    line-height: 46px; /*Cho line-height bằng chiều cao của header là 46px*/
+    padding: 0 24px;
+    display: inline-block; /*Ăn theo kích thước của line-height */
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover{
+    /* Vì giống thuộc tính nên gộp hai đối tượng sử dụng cùng 1 thuộc tính bằng dấu "," */
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav, .subnav{
+    list-style-type: none;
+}
+
+#nav .subnav{
+    display: none;
+    position: absolute; /*để cho subnav trở thành con của More*/
+    /* Thêm thuộc tính top và left để cho vị trí của subnav luôn chuẩn đề phòng có những trường hợp trình duyệt khác bị lệch */
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /*(0 0) là để bóng tỏa đều, 10px độ rộng, rgba(0, 0, 0, 0.3) là màu đen độ mờ là 0.3*/
+}
+
+#nav li:hover .subnav{
+    display: block; /*Thuộc tính cho thẻ subnav hiện ra khi hover vào thẻ li là thẻ cha của subnav*/
+}
+
+#nav .subnav li{
+    display: block; /*Cho ăn theo kích thước của ul chứa nó*/
+}
+
+#nav .subnav a{
+    color: #000;
+    padding: 0 12px; /*Cho phần padding mỏng hơn so với thẻ chứa nó là More*/
+    line-height: 38px; /*Cho line-height nhỏ hơn của thẻ More*/
+}
+
+#nav .nav-arrow-down{
+    font-size: 12px;
+}
+
+#header .menu-btn,
+#header .search-btn{
+    padding: 0 21px;
+    float: right;
+}
+
+#header .search-btn:hover{
+    cursor: pointer;
+    background-color: #f44336;
+}
+
+#header .menu-btn:hover{
+    background-color: #ccc;
+}
+
+#header .menu-btn:hover .menu-icon{
+    color: #000;
+}
+
+#header .menu-icon,
+#header .search-icon{
+    line-height: 46px;
+    font-size: 20px;
+    color: #fff;
+}
+/* SLIDER SECTION */
+#slider {
+    position: relative;
+    margin-top: 46px; /* Cho margin bằng với kích thước của header để cho header k phải đè lên slider bởi thuộc tính fixed */
+    padding-top: 50%; /*Kích thước của chiều cao luôn luôn bằng 50% của chiều rộng*/
+    background: url('../img/Slider/Slider1.jpg') top center / cover no-repeat;
+}
+
+#slider .text-content{
+    position: absolute;
+    bottom: 48px;
+    color:#fff;
+    width: 100%;
+    text-align: center;
+}
+
+#slider .text-heading{
+    font-weight: 500; /*Giảm độ dày của chữ,Dao động từ 100 - 700px*/
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+#slider .text-description{
+    font-size: 15px;
+}
+
+
+#content {
+
+}
+
+#content .content-section{
+    width: 800px;
+    max-width: 100%; /*Chiều rộng luôn bằng 100% kích thước trình duyệt*/
+    padding: 64px 16px 112px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ABOUT SECTION */
+#content .section-heading{
+    font-size: 30px;
+    font-weight: 400;
+    margin: 10px 0;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+#content .section-sub-heading{
+    font-size: 15px;
+    font-style: italic;
+    margin: 15px 0;
+    opacity: 0.5;
+    text-align: center;
+}
+
+#content .text-about{
+    font-size: 15px;
+    line-height: 1.4;
+    text-align: justify;
+    margin: 15px 0;
+}
+
+#content .member-list{
+    padding-top: 32px;
+    /* overflow: hidden; 1 cách giải quyết lỗi float thẻ cha k ôm được thẻ con */
+}
+
+#content .member-name{
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+#content .member-avatar{
+    width: 154px;
+    border-radius: 4px;
+}
+
+/* TOUR SECTION */
+#content .tour-section{
+    background-color: #000;
+    
+}
+
+/* Tickets */
+#content .tickets-list{
+    background-color: #fff;
+    list-style: none;
+    margin-top: 35px;
+    font-size: 15px;
+}
+
+#content .tickets-list li{
+    color: #757575;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+}
+
+.tickets-list .sold-out{
+    color: #fff;
+    background-color: #f44336;
+    padding: 6px 8px;
+    margin-left: 16px;
+}
+
+.tickets-list .quanlity{
+    color: #fff; 
+    background-color: #000;
+    border-radius: 100%;
+    float: right; /*Chỉ khi có thuộc tính float thì mới có thể set width height cho đối tượng*/
+    width: 24px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    margin-top: -3px; /*Có thuộc tính float mới có thể set margin âm*/
+}
+
+/* Places */
+#content .places-list{
+    margin-top: 32px;
+}
+
+.place-avatar{
+    width: 100%;/*Cho ảnh bằng với kích thước của thẻ chứa nó*/
+    display: block; /*Cho ảnh thành block để k đẩy thẻ khác 1 khoảng*/
+}
+
+.place-avatar:hover{
+    opacity: 0.6; /*Khi hover ảnh nên dùng opacity*/
+}
+
+.place-body{
+    font-size: 15px;
+    padding: 16px;
+    background-color: #fff;
+}
+
+.place-body .place-name{
+    font-size: 15px; /*Vì thẻ h có thuộc tính font-size riêng nên phải css riêng cho thẻ h*/
+}
+
+.place-body .place-time{
+    margin: 15px 0;
+    color: #757575;
+}
+
+.place-body .place-description{
+    margin: 15px 0;
+    line-height: 1.4;
+}
+
+.place-body .place-buy-btn{
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+    padding: 8px 16px;
+}
+
+.place-body .place-buy-btn:hover{
+    color: #000;
+    background-color: #ccc;
+}
+
+/* CONTACT SECTION */
+#content .contact-section{
+    background-color: #fff;
+    width: 100%;
+}
+
+.contact-section .contact-content{
+    padding: 32px 0;
+}
+
+.contact-section .contact-information{
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.contact-information i[class*="ti-"] /*Selector nâng cao chỉ ra các class có chuỗi tương ứng*/{
+    width: 30px;
+    display: inline-block; /*Để set width cho icon*/
+}
+
+.contact-section .contact-form{
+    font-size: 15px;
+}
+
+.contact-form .form-input{
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+#form-send-btn{
+    float: right;
+    color: #fff;
+    background-color: #000;
+    margin: 8px 0;
+    padding: 11px 17px;
+    border: none;
+}
+
+#form-send-btn:hover{
+    cursor: pointer;
+    color: #000;
+    background-color: #ccc;
+}
+
+/* MAP SECTION */
+.map-section{
+    width: 100%;
+}
+
+/* FOOTER SECTION */
+#footer {
+    padding: 64px 16px;
+    text-align: center;  
+    opacity: 0.6; 
+}
+
+.socials-list li{
+    display: inline-block;
+}
+
+.footer-link a,
+.socials-list li:hover{
+    opacity: 0.6;
+}
+
+.socials-list li a{
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+}
+
+#footer .footer-link{
+    margin: 15px 0;
+}
+
+.footer-link a{
+    color: #000;
+}

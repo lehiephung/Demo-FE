@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
+    <link rel="stylesheet" href="./assets/css/modal.css">
+    <link rel="stylesheet" href="./assets/font/themify-icons-font/themify-icons/themify-icons.css">
+    <title>The Band</title>
+    <link rel="shortcut icon" href="./assets/img/favicon/tải xuống.png" type="image/x-icon">
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <!-- Begin: nav -->
+            <ul id="nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#">
+                        More
+                        <i class="nav-arrow-down ti-angle-down"></i>
+                    </a>
+                    <!-- Vì có thể xuất hiện nhiều lần nên đặt là class nếu đặt là id sẽ vi pham nguyên tắc thiết kế-->
+                    <ul class="subnav">
+                        <li><a href="#">Merchangdise</a></li>
+                        <li><a href="#">Extras</a></li>
+                        <li><a href="#">Media</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- End: nav -->
+
+            <!-- Begin: Search-btn -->
+            <div class="search-btn">
+                <i class="search-icon ti-search"></i>
+            </div>
+
+            <div class="menu-btn">
+                <i class="menu-icon ti-align-right"></i>
+            </div>
+            <!-- End: Search-btn -->
+        </div>
+
+        <div id="slider">
+            <div class="text-content">
+                <h3 class="text-heading">Los Angeles</h3>
+                <b class="text-description">We had the best time playing at Venice Beach!</b>
+            </div>
+        </div>
+
+        <div id="content">
+            <!-- About section -->
+            <div id="band" class="content-section">
+                <h2 class="section-heading">THE BAND</h2>
+                <p class="section-sub-heading">We love music</p>
+                <p class="text-about">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="row member-list">
+                    <div class="col col-third text-center">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/Band-member/bandmember.jpg" alt="" class="member-avatar">
+                    </div>
+                    
+                    <div class="col col-third text-center">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/Band-member/bandmember.jpg" alt="" class="member-avatar">
+                    </div>
+                    
+                    <div class="col col-third text-center">
+                        <p class="member-name">Name</p>
+                        <img src="./assets/img/Band-member/bandmember.jpg" alt="" class="member-avatar">
+                    </div>
+                </div>
+            </div>
+            <!-- End about section -->
+
+            <!-- Tour section -->
+            <div id="tour" class="tour-section"> <!-- Tạo 1 class cha chứa content-section để css background vì ontent-section đã css margin nên background không phủ kín hết-->
+                <div class="content-section">
+                    <h2 class="section-heading text-white">TOUR DATES</h2>
+                    <p class="section-sub-heading text-white">Remember to book your tickets!</p>
+                    <!-- Tickets  -->
+                    <ul class="tickets-list">
+                        <li>September <span class="sold-out">Sold out</span></li>
+                        <li>October <span class="sold-out">Sold out</span></li>
+                        <li>November <span class="quanlity">3</span></li>
+                    </ul>
+                    <!-- Places -->
+                    <div class="row places-list">
+                        <div class="col col-third">
+                            <img src="./assets/img/Place/Place1.jpg" alt="" class="place-avatar">
+                            <div class="place-body">
+                                <h3 class="place-name">New York</h3>
+                                <p class="place-time">Fri 27 Nov 2016</p>
+                                <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <button class="place-buy-btn js-buy-tickets">Buy Tickets</button>
+                            </div>
+                        </div>
+
+                        <div class="col col-third">
+                            <img src="./assets/img/Place/Place2.jpg" alt="" class="place-avatar">
+                            <div class="place-body">
+                                <h3 class="place-name">Paris</h3>
+                                <p class="place-time">Sat 28 Nov 2016</p>
+                                <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <button class="place-buy-btn js-buy-tickets">Buy Tickets</button>
+                            </div>
+                        </div>
+
+                        <div class="col col-third">
+                            <img src="./assets/img/Place/Place3.jpg" alt="" class="place-avatar">
+                            <div class="place-body">
+                                <h3 class="place-name">San Francisco</h3>
+                                <p class="place-time">Sun 29 Nov 2016</p>
+                                <p class="place-description">Praesent tincidunt sed tellus ut rutrum sed vitae justo.</p>
+                                <button class="place-buy-btn js-buy-tickets">Buy Tickets</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+            <!-- End tour section -->
+
+            <!-- Contact section -->
+            <div id="contact" class="contact-section">
+                <div class="content-section">
+                    <h2 class="section-heading">CONTACT</h2>
+                    <p class="section-sub-heading">Fan? Drop a note!</p>
+                    <div class="row contact-content">
+                        <div class="col col-half contact-information">
+                                <ul style="list-style: none;">
+                                    <li><i class="ti-location-pin"></i>Chicago, US</li>
+                                    <li><i class="ti-mobile"></i>Phone: +00 151515</li>
+                                    <li><i class="ti-email"></i>Email: mail@mail.com</li>
+                                </ul>
+                        </div>
+                        <div class="col col-half contact-form">
+                            <form action="">
+                                <div class="row">
+                                    <div class="col col-half">
+                                        <!-- required dùng để yêu cầu nhập -->
+                                        <input class="form-input" type="text" name="" id="" required  placeholder="Name">
+                                    </div>
+                                    <div class="col col-half">
+                                        <input class="form-input" type="email" name="" id="" required placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col col-full">
+                                        <input class="form-input" type="text" name="" id="" required placeholder="Message"> 
+                                    </div>
+                                </div>
+                                <button id="form-send-btn">SEND</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End contact section -->
+
+            <!-- Map section -->
+            <img src="./assets/img/Map/map.jpg" alt="" class="map-section">
+            <!-- End map section -->
+        </div>
+
+        <div id="footer">
+            <div class="socials-list">
+                <ul>
+                    <li><a href=""><i class="ti-facebook"></i></a></li>
+                    <li><a href=""><i class="ti-instagram"></i></a></li>
+                    <li><a href=""><i class="ti-skype"></i></a></li>
+                    <li><a href=""><i class="ti-pinterest"></i></a></li>
+                    <li><a href=""><i class="ti-twitter-alt"></i></a></li>
+                    <li><a href=""><i class="ti-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-link">
+                <p>Powered by <a href="">w3.css</a></p>
+            </div>
+        </div>
+    
+    <div class="modal js-modal">
+        <div class="modal-container js-modal-container">
+            <div class="modal-close js-modal-close">
+            <i class="ti-close"></i>
+            </div>
+            <header class="modal-header">
+                <i class="modal-header-icon ti-bag"></i>
+                Tickets
+            </header>
+
+            <div class="modal-body">
+                <!-- Dòng for="" dùng để khi người dùng có click vào label thì cũng tự động forcus vào input có id tương ứng được đặt trong for="" -->
+                <label for="tickets-quanlity" class="modal-label">
+                    <i class="ti-shopping-cart"></i>
+                    Tickets, $15 per person
+                </label>
+                <input type="text" id="tickets-quanlity" class="modal-input" re  placeholder="How many?">
+
+                <label for="tickets-email" class="modal-label">
+                    <i class="ti-user"></i>
+                    Send To
+                </label>
+                <input id="tickets-email" type="mail" class="modal-input" required placeholder="Enter email">
+
+                <button id="btn-buy">
+                    Pay
+                    <i class="ti-check"></i>
+                </button>
+            </div>
+
+             <footer class="modal-footer">
+                <p for="">Need <a href="">help?</a></p>
+             </footer>
+        </div>
+    </div>
+
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/mobile-menu.js"></script>
+</body>
+</html>
